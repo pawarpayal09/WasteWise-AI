@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WasteWise AI — Don't Throw It. Ask AI.</title>
+<meta name="description" content="WasteWise AI recommends the best next life for an unwanted item — reuse, repair, donate, repurpose, recycle or safe disposal." />
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="/static/styles.css" />
+<script>
+  try {
+    var t = localStorage.getItem('ww-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body class="booting">
+
+<!-- ============================ AUTH SCREEN ============================ -->
+<div id="auth-root" hidden></div>
+
+<!-- ============================ APPLICATION ============================ -->
+<div class="app-shell" id="app-shell" hidden>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/" aria-label="WasteWise AI home">
+      <span class="brand-mark"><i class="fas fa-recycle"></i></span>
+      <span class="brand-text">
+        <strong>WasteWise<span class="brand-ai">AI</span></strong>
+        <small>Don't Throw It. Ask AI.</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-item" data-nav="home" href="#/"><i class="fas fa-house"></i><span>Home</span></a>
+      <a class="nav-item" data-nav="scan" href="#/scan"><i class="fas fa-camera-retro"></i><span>Scan Item</span></a>
+      <a class="nav-item" data-nav="impact" href="#/impact"><i class="fas fa-chart-pie"></i><span>My Impact</span></a>
+      <a class="nav-item" data-nav="campus" href="#/campus"><i class="fas fa-people-group"></i><span>Campus Challenge</span></a>
+      <a class="nav-item" data-nav="history" href="#/history"><i class="fas fa-clock-rotate-left"></i><span>History</span></a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="demo-pill"><span class="dot"></span> Demo Mode active</div>
+      <button class="btn btn-ghost btn-block" id="sidebar-demo-seed" type="button">
+        <i class="fas fa-wand-magic-sparkles"></i> Load demo history
+      </button>
+      <button class="btn btn-ghost btn-block" id="logout-btn-sidebar" type="button">
+        <i class="fas fa-arrow-right-from-bracket"></i> Sign out
+      </button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="topbar-title">
+        <span class="crumb" id="crumb">Home</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark / light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#/scan"><i class="fas fa-camera-retro"></i> Scan an Item</a>
+        <div class="profile" id="profile-chip" title="Your profile">
+          <span class="avatar" id="profile-avatar">?</span>
+          <span class="profile-meta">
+            <strong id="profile-name">Account</strong>
+            <small id="profile-email">—</small>
+          </span>
+        </div>
+        <button class="icon-btn" id="logout-btn" type="button" aria-label="Sign out" title="Sign out">
+          <i class="fas fa-arrow-right-from-bracket"></i>
+        </button>
+      </div>
+    </header>
+
+    <main id="view" class="view" aria-live="polite">
+      <div class="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading WasteWise AI…</p>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <span><i class="fas fa-brain"></i> WasteWise AI — responsible AI guidance. Estimates based on images and your answers, not physical inspection.</span>
+      <span class="foot-links">
+        <a href="#/impact">My Impact</a>
+        <a href="#/campus">Campus</a>
+        <a href="#/history">History</a>
+      </span>
+    </footer>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

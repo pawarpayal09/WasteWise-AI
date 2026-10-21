@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# local database (created automatically on first run)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# env
+.env
+.env.local
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# build output (not used by this app, ignored just in case)
+dist/
+.wrangler/

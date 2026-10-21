@@ -1,0 +1,21 @@
+{
+  "name": "wastewise-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WasteWise AI — Don't Throw It. Ask AI. AI-powered second-life recommendations for unwanted items.",
+  "main": "server/index.mjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node --watch server/index.mjs",
+    "reset-db": "node server/reset.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "better-sqlite3": "^13.0.3",
+    "hono": "^4.6.14"
+  }
+}
